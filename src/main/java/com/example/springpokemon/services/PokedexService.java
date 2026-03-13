@@ -15,10 +15,12 @@ public class PokedexService {
     }
 
     public Pokemon getSingleById(String id) {
-        try {
-            return repo.getSingleById(id);
-        } catch (SQLException e) {
-            throw new NoSuchElementException("Could not fetch pokemon", e);
+        Pokemon returnPokenom = null;
+        try{
+            returnPokenom  = repo.getSingleById(id);
+        }catch (SQLException e){
+            throw new NoSuchElementException();
         }
+        return returnPokenom;
     }
 }

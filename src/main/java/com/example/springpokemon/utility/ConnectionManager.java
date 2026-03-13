@@ -6,7 +6,11 @@ public class ConnectionManager {
     private Connection conn;
 
     public ConnectionManager() throws SQLException {
-        this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pokemon","root","hejsa");
+        this.conn = DriverManager.getConnection(
+                System.getenv("DB_URL"),
+                System.getenv("DB_USER"),
+                System.getenv("DB_PASSWORD")
+        );
     }
 
     public Connection getConnection (){

@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>404 • POKÉMON NOT FOUND</title>
+  <title>500 • DATABASE ERROR</title>
 
   <link rel="stylesheet" th:href="@{/pokemon.css}">
-  <link rel="stylesheet" href="../static/pokemon.css">
+  <link rel="stylesheet" href="../../static/pokemon.css">
 </head>
 
 <body>
@@ -18,32 +18,36 @@
       <div class="pixel-icon"></div>
       <div>
         <h1>POKÉDEX TERMINAL</h1>
-        <div class="sub">ERROR</div>
+        <div class="sub">SYSTEM ERROR</div>
       </div>
     </div>
 
     <nav>
       <a th:href="@{/pokemon/by-primary-type}">POKÉDEX</a>
-      <a th:href="@{/}">HOME</a>
+      <a th:href="@{/static}">HOME</a>
     </nav>
   </header>
 
   <div class="card error-card">
 
-    <h2 class="error-code">404</h2>
+    <h2 class="error-code">500</h2>
 
     <p class="error-text">
-      WILD POKÉMON NOT FOUND
+      DATABASE TEMPORARILY UNAVAILABLE
     </p>
 
     <p class="small">
-      The page you tried to access escaped into the tall grass.
+      The Pokédex database cannot be reached right now.
+    </p>
+
+    <p class="small">
+      Please try again in a moment.
     </p>
 
     <div class="spacer"></div>
 
     <a th:href="@{/pokemon/by-primary-type}" class="error-button">
-      RETURN TO POKÉDEX
+      TRY AGAIN
     </a>
 
   </div>

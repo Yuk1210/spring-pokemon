@@ -12,11 +12,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(NoSuchElementException.class)
     public ModelAndView handleNotFound(NoSuchElementException e) {
-        return new ModelAndView("404");
+        return new ModelAndView("error-pages/404");
     }
 
     @ExceptionHandler(SQLException.class)
     public ModelAndView handleDatabase(SQLException e) {
-        return new ModelAndView("500");
+        return new ModelAndView("error-pages/500");
     }
 }
